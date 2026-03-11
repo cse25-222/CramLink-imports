@@ -2,11 +2,13 @@ body {
 
     font-family: Arial, sans-serif; 
 
-    color: #fffdfd; 
+    color: #ffffff; 
 
-    background-color: #ffdcdc; 
+    background-color: #ffffff; 
 
     margin: 10px; 
+    
+    margin-left: 40px;
 
     padding: 20px; 
 
