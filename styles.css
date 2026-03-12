@@ -26,9 +26,10 @@ section {
 
 }
 
-.login
-{
-    background-image: url(images/logo.jpeg);
-    background-size: cover;
-    background-position: center;
-}
+    .login-body {
+        background-image: url(images/logo.jpeg);
+        background-size: cover; 
+        background-position: center;
+        height: 100vh;
+        
+    }
