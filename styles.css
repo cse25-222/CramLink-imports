@@ -29,12 +29,12 @@ section {
 .login.html
 {
    
-    background-image:(images/WhatsApp Image 2026-03-10 at 14.02.29.jpeg);
+    background-image:url('images/WhatsApp Image 2024-06-17 at 12.44.28 PM.jpeg');
     background-size: cover;
     background-position: center;
     padding: 20px;
     border: 1px solid #000000;
-        
+
 
 }
 .login.html h2 {
