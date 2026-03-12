@@ -4,15 +4,10 @@ body {
 
     color: #030303; 
 
-    background-color: #ffffff; 
-
-    margin: 10px; 
+    background-image: url(images/logo.jpeg);
+    background-size: cover;
+    background-position: center;
     
-    margin-left: 40px;
-
-    padding: 20px; 
-
-    line-height: 1.6; 
 
 } 
 section { 
@@ -25,11 +20,3 @@ section {
     border: 1px solid #000000;
 
 }
-
-    .login-form {
-
-        text-align: center;
-        margin-top: 50px;
-        
-
-    }
