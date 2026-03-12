@@ -26,10 +26,10 @@ section {
 
 }
 
-    .login-body {
-        background-image: url(images/logo.jpeg);
-        background-size: cover; 
-        background-position: center;
-        height: 100vh;
+    .login-form {
+
+        text-align: center;
+        margin-top: 50px;
+        
 
     }
