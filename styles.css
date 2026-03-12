@@ -25,3 +25,16 @@ section {
     border: 1px solid #000000;
 
 }
+
+<a href="login.html">Login</a> 
+
+section { 
+
+    float: right;
+
+    font-size: 14px;
+
+    border: 1px solid #000000;
+
+}
+<a href="register.html">Register</a>
