@@ -31,7 +31,12 @@ section {
   header { 
 
     font-size: 24px;
-
-    font-weight: bold;
+    font-weight: bold; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    element.style {
+        display: block;
+        margin: 0 auto;
+        scrollbar-highlight-color: chocolate;
+    }
+    
   }
