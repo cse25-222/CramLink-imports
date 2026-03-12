@@ -37,6 +37,21 @@
     <main> 
 
         <p>Join us today! Fill out the form below to create an account.</p> 
+        <section>
+        <h2>Create Your Account</h2>
+        <form action="register_process.php" method="post">
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Register">
+        </form>
+        </section>
+        <p>Already have an account? <a href="login.html">Login here</a>.</p>
+
+
 
     </main> 
 
