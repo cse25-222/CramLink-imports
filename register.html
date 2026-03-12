@@ -44,9 +44,25 @@
             <input type="text" id="name" name="name" required><br><br>
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br><br>
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address"><br><br>    
             <label for="password">Password:</label><br>
             <input type="password" id="password" name="password" required><br><br>
             <input type="submit" value="Register">
+            <script>
+                document.querySelector('form').addEventListener('submit', function(event) {
+                    var email = document.getElementById('email').value;
+                    var password = document.getElementById('password').value;
+                    
+                    // Basic validation
+                    if (!email || !password) {
+                        alert('Please fill in all fields.');
+                        event.preventDefault();
+                    } else if (password.length < 6) {
+                        alert('Password must be at least 6 characters long.');
+                        event.preventDefault();
+                    }
+                });
+            </script>
         </form>
         </section3>
         <p>Already have an account? <a href="login.html">Login here</a>.</p>
