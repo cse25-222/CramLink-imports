@@ -58,10 +58,11 @@
                 document.querySelector('form').addEventListener('submit', function(event) {
                     const emailInput = document.getElementById('email');
                     if (!validateEmail(emailInput.value)) {
-                        alert('Please enter a valid email address.');
-                        event.preventDefault();
-                        if everything is ValidityState, redirect to login page
-                        window.location.href = 'login.html';
+                            alert('Please enter a valid email address.');
+                            event.preventDefault();
+                        } else {
+                            // If everything is valid, redirect to login page
+                            window.location.href = 'login.html';
                     }
                 });
             </script>
