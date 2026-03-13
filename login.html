@@ -22,12 +22,8 @@
 
             <a href="index.html">Home</a> | 
 
-            <a href="register.html">Register</a> | 
-
-            <a href="login.html">Login</a> 
-            <a href="order.html">Order</a>
+            <a href="register.html">Register</a> |
             
-
             <link rel="stylesheet" href="styles.css"> 
 
         </nav> 
@@ -45,7 +41,7 @@
 
         <h2>Login to your account</h2>
 
-            <form action="login_process.php" method="post">
+            <form id="loginForm">
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br><br>
                 <p>please enter a valid email address.</p>
@@ -54,26 +50,35 @@
             <p>Password must be at least 6 characters long.</p>
             <input type="submit" value="Login">
         </form>
+       
         <Script>
                 function validateEmail(email) {
                       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                       return re.test(String(email).toLowerCase());
                  }
     
-                 document.querySelector('form').addEventListener('submit', function(event) {
-                      const emailInput = document.getElementById('email');
-                      if (!validateEmail(emailInput.value)) {
-                            event.preventDefault();
-                            alert('Please enter a valid email address.');
-                            return;
+                 document.getElementById('loginForm').addEventListener('submit', function(event) {
+                    event.preventDefault(); // stop normal form submission
+
+                      const emailInput = document.getElementById('email').value;
+                        const passwordInput = document.getElementById('password').value;
+                      if (! validateEmail(emailInput.value)) {
+                        alert('Please enter a valid email address.');
+                        return;
+                     if (passwordInput.length < 6) {
+                        alert('Password must be at least 6 characters long.');
+                        return;
+
                         }
-                            // if everything is valid, redirect to order.html
-                            window.location.href = 'order.html';
+                         // ✅ If everything is valid, redirect to order.html
+                        window.location.href = 'order.html';
 
                       }
                     );
 
-                    
+                
+
+
                     <form/>
 
                  
