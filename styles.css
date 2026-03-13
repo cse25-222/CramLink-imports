@@ -44,7 +44,8 @@ section {
 
     font-size: 18px;
     font-weight: bold; 
-    text-shadow: 2px 2px 4px rgba(255, 1, 1, 0.5);
+    text-shadow: 2px 2px 4px rgba(4, 4, 4, 0.5);
+    accent-color: red;
     element.style {
         display: block;
         margin: 0 auto;
