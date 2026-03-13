@@ -49,24 +49,29 @@
             <input type="password" id="password" name="password" required minlength="6"><br><br>
             <p>Password must be at least 6 characters long.</p>
             <input type="submit" value="Register">
+        
             <script>
-               function validateEmail(email) {
-                    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    return re.test(String(email).toLowerCase());
-                }
 
-                document.querySelector('form').addEventListener('submit', function(event) {
-                    const emailInput = document.getElementById('email');
-                    if (!validateEmail(emailInput.value)) {
-                            alert('Please enter a valid email address.');
-                            event.preventDefault();
-                            return false;
-                        } else {
-                            // If everything is valid, redirect to login page
-                            window.location.href = 'login.html';    
-                    
-                    }
-                });
+  document.querySelector("form").addEventListener("submit", function(event) {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (!validateEmail(email)) {
+      alert("Please enter a valid email address.");
+      event.preventDefault();
+      return;
+    }
+
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters long.");
+      event.preventDefault();
+      return;
+    }
+
+    // ✅ If everything is valid, redirect to ordering page
+    window.location.href = "login.html";
+  });
+</script>
             </script>
         </form>
         </section3>
