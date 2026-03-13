@@ -60,9 +60,11 @@
                     if (!validateEmail(emailInput.value)) {
                             alert('Please enter a valid email address.');
                             event.preventDefault();
+                            return false;
                         } else {
                             // If everything is valid, redirect to login page
-                            window.location.href = 'login.html';
+                            window.location.href = 'login.html';    
+                    
                     }
                 });
             </script>
