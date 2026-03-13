@@ -25,6 +25,8 @@
             <a href="register.html">Register</a> | 
 
             <a href="login.html">Login</a> 
+            <a href="order.html">Order</a>
+            <a href="logout.html">Logout</a>
 
             <link rel="stylesheet" href="styles.css"> 
 
@@ -63,6 +65,9 @@
                       if (!validateEmail(emailInput.value)) {
                             event.preventDefault();
                             alert('Please enter a valid email address.');
+                            // if everything is valid, redirect to order.html
+                            window.location.href = 'order.html';
+                            
                       }
                  });
         </Script>

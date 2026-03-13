@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+    <meta charset="UTF-8"> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Order</title> 
+
+</head> 
+
+<body> 
+
+    <header> 
+
+        <h1>Order</h1> 
+
+        <nav> 
+            <a href="login.html">Login</a> 
+            <a href="order.html">Order</a>
+            <a href="logout.html">Logout</a>    
+          <link rel="stylesheet" href="styles.css">
+        </nav>
+
+    </header>
+
+    <main> 
+
+        <p>Place your order here! Fill out the form below to submit your order.</p> 
+        <section4>
+        <h2>Submit Your Order</h2>
+        <form id="orderForm">
+    <label for="productLink">Product Link:</label>
+    <input type="url" id="productLink" name="productLink" required>
+    <br><br>
+    <input type="submit" value="Submit Order">
+</form>
+<script>
+  document.getElementById('orderForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const productLink = document.getElementById('productLink').value;
+    if (validateURL(productLink)) {
+      alert('Order submitted successfully!');
+    } else {
+      alert('Please enter a valid URL.');
+    }
+  });
+
+  function validateURL(url) {
+    const re = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+    return re.test(String(url).toLowerCase());
+  }
+</script>
+
+    </main>
+
+</body>
+</html>
+
