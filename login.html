@@ -26,7 +26,7 @@
 
             <a href="login.html">Login</a> 
             <a href="order.html">Order</a>
-            <a href="logout.html">Logout</a>
+            
 
             <link rel="stylesheet" href="styles.css"> 
 
@@ -65,11 +65,18 @@
                       if (!validateEmail(emailInput.value)) {
                             event.preventDefault();
                             alert('Please enter a valid email address.');
+                            return;
+                        }
                             // if everything is valid, redirect to order.html
                             window.location.href = 'order.html';
-                            
+
                       }
-                 });
+                    );
+
+                    
+                    <form/>
+
+                 
         </Script>
 
         <p>Don't have an account? <a href="register.html">Register here</a>.</p>
