@@ -30,17 +30,44 @@
  
 
     <main>
-        <section>
-        <h1>Profile</h1>
-        <image src="images/manager.jpg" alt="Profile background" width="200" height="200">
-        <p>Welcome, Kagiso@email.com</p>
-        <p>Account status: Active</p>
-        <p>Last login: 2026-06-01 10:00 AM</p>
-        <p>Membership level: Premium</p>
-        <p>Subscription status: Active</p>
-        <p>Recent activity: Placed an order on 2024-05-30</p>
-        <p>Account created: 2024-01-15</p>
-         </section>
+        <section area>
+        <!-- Profile Widget in Dashboard Header -->
+<div class="profile-widget">
+    <!-- Avatar / Profile Picture -->
+    <image src="images/Profile.pic.png" alt="Profile Picture" class="avatar" onclick="toggleProfileDetails()" style="cursor:pointer; width:50px; height:50px; border-radius:50%;">
+
+    <!-- Profile Details Dropdown -->
+    <div id="profile-details" style="display:none; position:absolute; background:white; border:1px solid #ccc; padding:15px; width:250px; right:0; top:60px; z-index:100;">
+        <h3>Kagiso Suping</h3>
+        <p><strong>Username:</strong> kagiso123</p>
+        <p><strong>Email:</strong> kagiso@example.com</p>
+        <p><strong>Phone:</strong> +267 7XXXXXXX</p>
+        <p><strong>Address:</strong> Gaborone, Botswana</p>
+        <button onclick="editProfile()">Edit Profile</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+</div>
+
+<script>
+function toggleProfileDetails() {
+    const details = document.getElementById('profile-details');
+    if(details.style.display === 'none') {
+        details.style.display = 'block';
+    } else {
+        details.style.display = 'none';
+    }
+}
+
+// Placeholder functions
+function editProfile() {
+    window.location.href = 'update-profile.html';
+}
+
+function logout() {
+    window.location.href = 'logout.html';
+}
+</script>
+        </section area>
 
         <section>
         <h2>My Oders</h2>
