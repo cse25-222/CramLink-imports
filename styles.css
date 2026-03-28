@@ -99,5 +99,18 @@ button:hover, .cta:hover {
   color: #ff6600;
   text-decoration: none;
   text-shadow: #000000 1px 1px 2px ;
-  
+
+}
+
+label {
+
+    font-size: 16px;
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(4, 4, 4, 0.5);
+    accent-color: red;
+    element.style {
+        display: block;
+        margin: 0 auto;
+        scrollbar-highlight-color: chocolate;
+    }
 }
