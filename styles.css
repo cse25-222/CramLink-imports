@@ -141,3 +141,46 @@ ul {
     }
 
 }
+.profile-widget {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #004080;
+}
+
+#profile-details {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  background: #004080;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #0066cc;
+}
