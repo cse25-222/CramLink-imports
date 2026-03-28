@@ -30,23 +30,28 @@
  
 
     <main>
-        <section area>
-        <!-- Profile Widget in Dashboard Header -->
-<div class="profile-widget">
+   <section class="profile-area">
+  <!-- Profile Widget in Dashboard Header -->
+  <div class="profile-widget">
     <!-- Avatar / Profile Picture -->
-    <image src="images/Profile.pic.png" alt="Profile Picture" class="avatar" onclick="toggleProfileDetails()" style="cursor:pointer; width:50px; height:50px; border-radius:50%;">
+    <img src="images/Profile.pic.png" 
+         alt="Profile Picture" 
+         class="avatar" 
+         onclick="toggleProfileDetails()">
 
     <!-- Profile Details Dropdown -->
-    <div id="profile-details"></div>
-        <h3>Kagiso Suping</h3>
-        <p><strong>Username:</strong> kagiso123</p>
-        <p><strong>Email:</strong> kagiso@example.com</p>
-        <p><strong>Phone:</strong> +267 76 123 456</p>
-        <p><strong>Address:</strong> Gaborone, Botswana</p>
-        <button onclick="editProfile()">Edit Profile</button>
-        <button onclick="logout()">Logout</button>
+    <div id="profile-details" class="hidden">
+      <h3>Kagiso Suping</h3>
+      <p><strong>Username:</strong> kagiso123</p>
+      <p><strong>Email:</strong> kagiso@example.com</p>
+      <p><strong>Phone:</strong> +267 76 123 456</p>
+      <p><strong>Address:</strong> Gaborone, Botswana</p>
+      <button onclick="editProfile()">Edit Profile</button>
+      <button onclick="logout()">Logout</button>
     </div>
-</div>
+  </div>
+</section>
+
 
 <script>
 function toggleProfileDetails() {
