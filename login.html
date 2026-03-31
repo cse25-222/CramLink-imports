@@ -42,49 +42,40 @@
 
         <h2>Login to your account</h2>
 
-    <section2>
-      
-      <form id="loginForm">
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <form id="loginForm">
+    <input type="email" id="email" placeholder="Enter email" required>
+    <input type="password" id="password" placeholder="Enter password" required>
+    <button type="submit">Login</button>
+</form>
 
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <input type="submit" value="Login">
-      </form>
-    </section2>
-  </main>
+<script>
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  <script>
-    function validateEmail(email) {
-      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return re.test(String(email).toLowerCase());
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+        const response = await fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const result = await response.text();
+        alert(result);
+
+        if (result === "Login successful") {
+            window.location.href = "dashboard.html";
+        }
+
+    } catch (error) {
+        alert("Server error");
     }
-
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // stop normal form submission
-
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      // ✅ Basic validation
-      if (!validateEmail(email)) {
-        alert("Please enter a valid email address.");
-        return;
-      }
-
-      if (password.length < 1) {
-        alert("Please enter your password.");
-        return;
-      }
-
-      // ✅ If inputs are valid, redirect to dashboard page
-      window.location.href = "dashboard.html";
-    });
-    
-                 
-        </Script>
+});
+</script>
         <br> login to access your dashboard and manage your orders, track shipments, and update your account information.
 
         <p>Don't have an account? <a href="register.html">Register here</a>.</p>
