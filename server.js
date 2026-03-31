@@ -2,31 +2,38 @@ const express = require('express');
 const path = require('path');
 const mysql = require('mysql2');
 const cors = require('cors');
+const session = require('express-session');
 
 const app = express();
 const port = 3000;
 
-// allow JSON data from frontend
+// ===== MIDDLEWARE =====
 app.use(express.json());
 app.use(cors());
+
+app.use(session({
+    secret: 'cramlink-secret',
+    resave: false,
+    saveUninitialized: true
+}));
 
 // ===== DATABASE CONNECTION =====
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '', // XAMPP default is empty
-    database: 'cramlink-imports'
+    password: '',
+    database: 'CramLink-imports'
 });
 
 db.connect((err) => {
     if (err) {
-        console.log("❌ Database connection failed");
+        console.log("❌ Database connection failed:", err);
     } else {
         console.log("✅ Database connected");
     }
 });
 
-// ===== SERVE YOUR WEBSITE FILES =====
+// ===== SERVE FILES =====
 app.use(express.static(path.join(__dirname)));
 
 // homepage
@@ -34,7 +41,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// ===== REGISTER USER =====
+// ===== REGISTER =====
 app.post('/register', (req, res) => {
     const { email, password } = req.body;
 
@@ -54,11 +61,7 @@ app.post('/register', (req, res) => {
     });
 });
 
-// ===== START SERVER =====
-app.listen(port, () => {
-    console.log(`🚀 Server running at http://localhost:${port}`);
-});
-// ===== LOGIN USER =====
+// ===== LOGIN =====
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
@@ -71,9 +74,31 @@ app.post('/login', (req, res) => {
         }
 
         if (result.length > 0) {
+            req.session.user = email;
             res.send("Login successful");
         } else {
             res.send("Invalid email or password");
         }
     });
+});
+
+// ===== DASHBOARD (PROTECTED) =====
+app.get('/dashboard', (req, res) => {
+    if (req.session.user) {
+        res.sendFile(path.join(__dirname, 'dashboard.html'));
+    } else {
+        res.send("Please login first");
+    }
+});
+
+// ===== LOGOUT =====
+app.get('/logout', (req, res) => {
+    req.session.destroy(() => {
+        res.send("Logged out");
+    });
+});
+
+// ===== START SERVER =====
+app.listen(port, () => {
+    console.log(`🚀 Server running at http://localhost:${port}`);
 });
