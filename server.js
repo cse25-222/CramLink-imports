@@ -15,7 +15,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '', // XAMPP default is empty
-    database: 'cramlink'
+    database: 'cramlink-imports'
 });
 
 db.connect((err) => {
