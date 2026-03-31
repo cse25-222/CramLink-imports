@@ -58,3 +58,22 @@ app.post('/register', (req, res) => {
 app.listen(port, () => {
     console.log(`🚀 Server running at http://localhost:${port}`);
 });
+// ===== LOGIN USER =====
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+
+    const sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+
+    db.query(sql, [email, password], (err, result) => {
+        if (err) {
+            console.log(err);
+            return res.send("Error during login");
+        }
+
+        if (result.length > 0) {
+            res.send("Login successful");
+        } else {
+            res.send("Invalid email or password");
+        }
+    });
+});
