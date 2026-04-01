@@ -39,14 +39,13 @@
         
         <subsection>
 
-
-        <h2>Login to your account</h2>
-
-        <form id="loginForm">
-    <input type="email" id="email" placeholder="Enter email" required>
-    <input type="password" id="password" placeholder="Enter password" required>
+<form id="loginForm">
+    <input type="email" id="email" placeholder="Enter email" required><br><br>
+    <input type="password" id="password" placeholder="Enter password" required><br><br>
     <button type="submit">Login</button>
 </form>
+
+<p id="message"></p>
 
 <script>
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
@@ -56,24 +55,25 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value.trim();
 
     try {
-        const response = fetch("http://localhost:3000/login", {
-    method: "POST",
-    credentials: "include",   // 🔥 VERY IMPORTANT
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ email, password })
-});
+        const response = await fetch("http://localhost:3000/login", {
+            method: "POST",
+            credentials: "include", // VERY IMPORTANT
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
 
         const result = await response.text();
-        alert(result);
+
+        document.getElementById("message").innerText = result;
 
         if (result === "Login successful") {
-            window.location.href = "dashboard.html";
+            window.location.href = "http://localhost:3000/dashboard";
         }
 
     } catch (error) {
-        alert("incorrect email or password");
+        document.getElementById("message").innerText = "Server error";
     }
 });
 </script>

@@ -65,21 +65,26 @@ app.post('/register', (req, res) => {
 // ===== LOGIN =====
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
+
     console.log("LOGIN INPUT:", email, password);
 
-    const sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+    const sql = "SELECT * FROM users WHERE email = ?";
 
-    db.query(sql, [email, password], (err, result) => {
+    db.query(sql, [email], (err, result) => {
         if (err) {
             console.log(err);
             return res.send("Error during login");
         }
 
-        if (result.length > 0) {
+        if (result.length === 0) {
+            return res.send("User not found");
+        }
+
+        if (result[0].password === password) {
             req.session.user = email;
             res.send("Login successful");
         } else {
-            res.send("Invalid email or password");
+            res.send("Incorrect password");
         }
     });
 });
