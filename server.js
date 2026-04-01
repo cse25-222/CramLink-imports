@@ -65,6 +65,7 @@ app.post('/register', (req, res) => {
 // ===== LOGIN =====
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
+    console.log("LOGIN INPUT:", email, password);
 
     const sql = "SELECT * FROM users WHERE email = ? AND password = ?";
 
