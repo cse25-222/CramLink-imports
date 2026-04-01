@@ -14,7 +14,8 @@ app.use(cors());
 app.use(session({
     secret: 'cramlink-secret',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false,
+    cookie: { maxAge: 1000 * 60 * 60 } // 1 hour
 }));
 
 // ===== DATABASE CONNECTION =====
