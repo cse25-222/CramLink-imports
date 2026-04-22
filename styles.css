@@ -1,6 +1,6 @@
 /* Background image applied to body */
 body {
-  background: url("images/your-picture.jpg") no-repeat center center fixed;
+  background: url("images/background\ .jpeg") no-repeat center center fixed;
   background-size: cover;
   font-family: 'Open Sans', Arial, sans-serif;
   color: #333;
