@@ -1,151 +1,108 @@
 <!DOCTYPE html> 
-
 <html lang="en"> 
-
 <head> 
-
     <meta charset="UTF-8"> 
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
     <title>Dashboard</title> 
-
+    <link rel="stylesheet" href="styles.css"> 
 </head> 
-
 <body> 
-
     <header> 
-
         <h1>Dashboard</h1> 
-
         <nav> 
-
             <a href="index.html">Home</a> |
             <a href="logout.html">Logout</a>
-            <link rel="stylesheet" href="styles.css"> 
-
         </nav> 
-
     </header> 
- 
 
     <main>
-   <section class="profile-area" style="position: relative;">
-  <!-- Profile Widget in Dashboard Header -->
-  <div class="profile-widget">
-    <!-- Avatar / Profile Picture -->
-    <img src="images/Profile.pic.png" 
-         alt="Profile Picture" 
-         class="avatar" 
-         onclick="toggleProfileDetails()" style="cursor:pointer; width:50px; height:50px; border-radius:50%;">
+        <section class="profile-area" style="position: relative;">
+            <!-- Profile Widget in Dashboard Header -->
+            <div class="profile-widget">
+                <!-- Avatar / Profile Picture -->
+                <img src="images/Profile.pic.png" 
+                     alt="Profile Picture" 
+                     class="avatar" 
+                     onclick="toggleProfileDetails()" 
+                     style="cursor:pointer; width:50px; height:50px; border-radius:50%;">
 
-    <!-- Profile Details Dropdown -->
-    <div id="profile-details" class="hidden">
-      <h3>Kagiso Suping</h3>
-      <p><strong>Username:</strong> kagiso123</p>
-      <p><strong>Email:</strong> kagiso@example.com</p>
-      <p><strong>Phone:</strong> +267 76 123 456</p>
-      <p><strong>Address:</strong> Gaborone, Botswana</p>
-      <button onclick="editProfile()">Edit Profile</button>
-      <button onclick="logout()">Logout</button>
-    </div>
-  </div>
-</section>
+                <!-- Profile Details Dropdown -->
+                <div id="profile-details" class="hidden">
+                    <h3>Kagiso Suping</h3>
+                    <p><strong>Username:</strong> kagiso123</p>
+                    <p><strong>Email:</strong> kagiso@example.com</p>
+                    <p><strong>Phone:</strong> +267 76 123 456</p>
+                    <p><strong>Address:</strong> Gaborone, Botswana</p>
+                    <button onclick="editProfile()">Edit Profile</button>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </section>
 
+        <script>
+        function toggleProfileDetails() {
+            const details = document.getElementById('profile-details');
+            if(details.style.display === 'none') {
+                details.style.display = 'block';
+            } else {
+                details.style.display = 'none';
+            }
+        }
 
-<script>
-function toggleProfileDetails() {
-    const details = document.getElementById('profile-details');
-    if(details.style.display === 'none') {
-        details.style.display = 'block';
-    } else {
-        details.style.display = 'none';
-    }
-}
+        // Placeholder functions
+        function editProfile() {
+            window.location.href = 'updateprofile.html';
+        }
 
-// Placeholder functions
-function editProfile() {
-    window.location.href = 'updateprofile.html';
-}
+        function logout() {
+            window.location.href = 'logout.html';
+        }
+        </script>
 
-function logout() {
-    window.location.href = 'logout.html';
-}
-</script>
-        </section area>
+        <section>
+            <h2>My Orders</h2>
+            <li><a href="orderhistory.html">View Order History</a></li>
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Product Name</th>
+                    <th>Status</th>
+                    <th>Estimated Delivery</th>
+                </tr>
+                <tr>
+                    <td>12345</td>
+                    <td>Wireless Earbuds</td>
+                    <td>Shipped</td>
+                    <td>2024-06-10</td>
+                </tr>
+                <tr>
+                    <td>67890</td>
+                    <td>Smartwatch</td>
+                    <td>Processing</td>
+                    <td>2024-06-15</td>
+                </tr>
+            </table>
+        </section>
 
-        <section1>
-        <h2>My Oders</h2>
-        <li><a href="orderhistory.html">View Order History</a></li>
-        <table>
-            <tr>
-                <th>Order ID</th>
-                <th>Product Name</th>
-                <th>Status</th>
-                <th>Estimated Delivery</th>
-            </tr>
-            <tr>
-                <td>12345</td>
-                <td>Wireless Earbuds</td>
-                <td>Shipped</td>
-                <td>2024-06-10</td>
-            </tr>
-            <tr>
-                <td>67890</td>
-                <td>Smartwatch</td>
-                <td>Processing</td>
-                <td>2024-06-15</td>
-            </tr>
-        </table>
-
-         </section1>
-
-            <area>
+        <section>
             <h2>Dashboard Overview</h2>
             <p>This is your dashboard where you can manage your account, view your orders, and track shipments.</p>
             <ul>
                 <li><a href="order.html">Place a new order</a></li>
-                <li><a href="oderhistory.html">Order History</a></li>
+                <li><a href="orderhistory.html">Order History</a></li>
                 <li><a href="TrackShipment.html">View Shipment Status</a></li>
                 <li><a href="updateprofile.html">Update Account Information</a></li>
             </ul>
-            </area>
-            <p>Browse through the following international marketplaces to find the products you're looking for:</p>
+        </section>
 
-    <ul>
-
-      <li>
-      <a href="https://www.alibaba.com" target="_blank">
-       Alibaba
-    </a>
-     </li>
-
-   <li>
-      <a href="https://www.aliexpress.com" target="_blank">
-       AliExpress
-    </a>
-   </li>
-
-   <li>
-   <a href="https://www.amazon.com" target="_blank">
-   Amazon
-    </a>
-   </li>
-
-   <li>
-    <a href="https://www.shein.com" target="_blank">
-     SHEIN
-  </a>
-  </li>
-
-   <li>
-   <a href="https://www.temu.com" target="_blank">
-    Temu
-   </a>
-   </li>
-
-
-   </ul>
-
-
+        <p>Browse through the following international marketplaces to find the products you're looking for:</p>
+        <ul>
+            <li><a href="https://www.alibaba.com" target="_blank">Alibaba</a></li>
+            <li><a href="https://www.aliexpress.com" target="_blank">AliExpress</a></li>
+            <li><a href="https://www.amazon.com" target="_blank">Amazon</a></li>
+            <li><a href="https://www.shein.com" target="_blank">SHEIN</a></li>
+            <li><a href="https://www.temu.com" target="_blank">Temu</a></li>
+        </ul>
     </main>
+</body> 
+</html>
