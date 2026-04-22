@@ -16,7 +16,7 @@ header, footer {
 
 /* Navigation links */
 nav a {
-  color: white;
+  color: rgb(231, 11, 11);
   text-decoration: none;
   margin: 0 10px;
   font-weight: bold;
@@ -30,7 +30,7 @@ main {
   max-width: 900px;
   margin: 20px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.9); /* semi-transparent white */
+  background: rgba(255, 255, 255, 0.9); /* transparent white */
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
