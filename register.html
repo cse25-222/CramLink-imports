@@ -1,92 +1,66 @@
 <!DOCTYPE html> 
-
 <html lang="en"> 
-
 <head> 
-
     <meta charset="UTF-8"> 
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
     <title>Register</title> 
-    
-
+    <link rel="stylesheet" href="styles.css"> 
 </head> 
 
 <body> 
-
     <header> 
-
         <h1>Register</h1> 
-
         <nav> 
-
             <a href="index.html">Home</a> | 
-
             <a href="login.html">Login</a> 
-            
-            <link rel="stylesheet" href="styles.css"> 
-
         </nav> 
-
     </header> 
 
- 
-
     <main> 
-
         <p>Join us today! Fill out the form below to create an account.</p> 
-        <section3>
-        <h2>Create Your Account</h2>
-       <form id="registerForm">
-    <input type="email" id="email" placeholder="Enter email" required>
-    <input type="password" id="password" placeholder="Enter password" required>
-    <button type="submit">Register</button>
-</form>
 
-<script>
-document.getElementById("registerForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
+        <section>
+            <h2>Create Your Account</h2>
+            <form id="registerForm">
+                <input type="email" id="email" placeholder="Enter email" required>
+                <input type="password" id="password" placeholder="Enter password" required>
+                <button type="submit">Register</button>
+            </form>
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+            <script>
+            document.getElementById("registerForm").addEventListener("submit", async (e) => {
+                e.preventDefault();
 
-    try {
-        const response = await fetch("http://localhost:3000/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email, password })
-        });
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
 
-        const result = await response.text();
-        alert(result);
+                try {
+                    const response = await fetch("http://localhost:3000/register", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ email, password })
+                    });
 
-        // optional redirect
-        window.location.href = "login.html";
+                    const result = await response.text();
+                    alert(result);
 
-    } catch (error) {
-        alert("Error connecting to server");
-    }
-});
-</script>
+                    // optional redirect
+                    window.location.href = "login.html";
 
-        </section3>
+                } catch (error) {
+                    alert("Error connecting to server");
+                }
+            });
+            </script>
+        </section>
+
         <p>Already have an account? <a href="login.html">Login here</a>.</p>
-
-
-
     </main> 
 
- 
-
     <footer> 
-
         <p>&copy; 2026 CramLink. All rights reserved.</p> 
-
     </footer> 
-
 </body> 
-
 </html>

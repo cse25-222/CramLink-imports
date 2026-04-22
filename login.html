@@ -1,100 +1,72 @@
 <!DOCTYPE html> 
-
 <html lang="en"> 
-
 <head> 
-
     <meta charset="UTF-8"> 
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
     <title>Login</title> 
-
+    <link rel="stylesheet" href="styles.css"> 
 </head> 
 
 <body> 
-
     <header> 
-
         <h1>Login</h1> 
-
         <nav> 
-
             <a href="index.html">Home</a> | 
-
-            <a href="register.html">Register</a> |
-            
-            
-            <link rel="stylesheet" href="styles.css"> 
-
+            <a href="register.html">Register</a> 
         </nav> 
-
     </header> 
 
- 
-
     <main> 
-
         <p>Welcome back! Please log in to your account.</p> 
         
-        <subsection>
+        <section>
+            <form id="loginForm">
+                <input type="email" id="email" placeholder="Enter email" required><br><br>
+                <input type="password" id="password" placeholder="Enter password" required><br><br>
+                <button type="submit">Login</button>
+            </form>
 
-<form id="loginForm">
-    <input type="email" id="email" placeholder="Enter email" required><br><br>
-    <input type="password" id="password" placeholder="Enter password" required><br><br>
-    <button type="submit">Login</button>
-</form>
+            <p id="message"></p>
 
-<p id="message"></p>
+            <script>
+            document.getElementById("loginForm").addEventListener("submit", async (e) => {
+                e.preventDefault();
 
-<script>
-document.getElementById("loginForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value.trim();
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+                try {
+                    const response = await fetch("http://localhost:3000/login", {
+                        method: "POST",
+                        credentials: "include", // VERY IMPORTANT
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ email, password })
+                    });
 
-    try {
-        const response = await fetch("http://localhost:3000/login", {
-            method: "POST",
-            credentials: "include", // VERY IMPORTANT
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email, password })
-        });
+                    const result = await response.text();
+                    document.getElementById("message").innerText = result;
 
-        const result = await response.text();
+                    if (result === "Login successful") {
+                        window.location.href = "http://localhost:3000/dashboard";
+                    }
+                } catch (error) {
+                    alert("incorrect email or password");   
+                }
+            });
+            </script>
 
-        document.getElementById("message").innerText = result;
+            <br> Login to access your dashboard and manage your orders, track shipments, and update your account information.
 
-        if (result === "Login successful") {
-            window.location.href = "http://localhost:3000/dashboard";
-        }
-
-    } catch (error) {
-        alert("incorrect email or password");   
-    }
-});
-</script>
-        <br> login to access your dashboard and manage your orders, track shipments, and update your account information.
-
-        <p>Don't have an account? <a href="register.html">Register here</a>.</p>
-        
-        </subsection>
+            <p>Don't have an account? <a href="register.html">Register here</a>.</p>
+        </section>
 
         <p>Thank you for visiting!</p> 
-
     </main> 
 
- 
-
     <footer> 
-
         <p>&copy; 2026 CramLink. All rights reserved.</p> 
-
     </footer> 
-
 </body> 
-
-</html> 
+</html>
