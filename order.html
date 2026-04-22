@@ -1,155 +1,110 @@
 <!DOCTYPE html> 
-
 <html lang="en"> 
-
 <head> 
-
     <meta charset="UTF-8"> 
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
     <title>Order</title> 
-
+    <link rel="stylesheet" href="styles.css">
 </head> 
 
 <body> 
-
     <header> 
-
         <h1>Order</h1> 
-
         <nav> 
-         
             <a href="logout.html">Logout</a> | 
             <a href="index.html">Home</a> |
-                <a href="dashboard.html">Dashboard</a>
-          <link rel="stylesheet" href="styles.css">
-        </nav>
-
+            <a href="dashboard.html">Dashboard</a>
+        </nav> 
     </header>
 
-<main>
+    <main>
+        <p>Place your order here! Fill out the form below to submit your order.</p>
 
-    <p>Place your order here! Fill out the form below to submit your order.</p>
+        <p>Browse through the following international marketplaces to find the products you're looking for:</p>
+        <ul>
+            <li><a href="https://www.alibaba.com" target="_blank">Alibaba</a></li>
+            <li><a href="https://www.aliexpress.com" target="_blank">AliExpress</a></li>
+            <li><a href="https://www.amazon.com" target="_blank">Amazon</a></li>
+            <li><a href="https://www.shein.com" target="_blank">SHEIN</a></li>
+            <li><a href="https://www.temu.com" target="_blank">Temu</a></li>
+        </ul>
 
-    <p>Browse through the following international marketplaces to find the products you're looking for:</p>
+        <section>
+            <h1>CramLink Imports Order</h1>
+            <p>We hope to improve our services</p>
+            <ol>
+                <li>Orange Money</li>
+                <li>Smega</li>
+                <li>My Zaka</li>
+            </ol>
+            <p>We are working on adding more payment options to make it easier for our customers to pay for their orders.</p>
+        </section>
 
-<ul>
+        <section>
+            <form onsubmit="submitOrder(event)">
+                <label>Email (Username)</label><br>
+                <input type="email" id="email" placeholder="example@email.com" required><br><br>
 
-<li>
-Alibaba
-</a>
-</li>
+                <label>Product Link</label><br>
+                <input type="url" id="productLink" placeholder="https://product-link.com" required><br><br>
 
-<li>
-<a href="https://www.aliexpress.com" target="_blank">
-AliExpress
-</a>
-</li>
+                <label>Product Description</label><br>
+                <textarea placeholder="Describe the item"></textarea><br><br>
 
-<li>
-<a href="https://www.amazon.com" target="_blank">
-Amazon
-</a>
-</li>
+                <label>Quantity</label><br>
+                <input type="number" min="1" value="1"><br><br>
 
-<li>
-<a href="https://www.shein.com" target="_blank">
-SHEIN
-</a>
-</li>
+                <label>Bank</label><br>
+                <select id="bank">
+                    <option>First National Bank (FNB)</option>
+                    <option>Absa Bank Botswana</option>
+                    <option>Standard Chartered</option>
+                    <option>Bank Gaborone</option>
+                    <option>Stanbic Bank</option>
+                </select><br><br>
 
-<li>
-<a href="https://www.temu.com" target="_blank">
-Temu
-</a>
-</li>
+                <label>Card Number</label><br>
+                <input type="text" id="cardNumber" placeholder="Enter 16-digit card number" maxlength="16" required><br><br>
 
-
-
-</ul>
-
-<script>
-
-function submitOrder(event){
-
-event.preventDefault();
-
-var email = document.getElementById("email").value;
-var link = document.getElementById("productLink").value;
-var card = document.getElementById("cardNumber").value;
-
-var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-var linkPattern = /^(https?:\/\/)/;
-
-if(!email.match(emailPattern)){
-alert("Please enter a valid email address.");
-return;
-}
-
-if(!link.match(linkPattern)){
-alert("Please enter a valid product link starting with http or https.");
-return;
-}
-
-if(card.length < 16){
-alert("Please enter a valid card number.");
-return;
-}
-
-alert("Order Submitted Successfully!");
-
-window.location.href = "status.html";
-
-}
-
-</script>
-
-</head>
-
-<body>
-
-<h1>CramLink Imports Order</h1>
-<p>we hope to improve our services </p>
-<ol>
-    <li>Orange Money</li>
-    <li>Smega</li>
-    <li>My Zaka</li>
-    <p>we are working on adding more payment options to make it easier for our customers to pay for their orders.</p>
-</ol>
-
-<form onsubmit="submitOrder(event)">
-
-<label>Email (Username)</label><br>
-<input type="email" id="email" placeholder="example@email.com" required><br><br>
-
-<label>Product Link</label><br>
-<input type="url" id="productLink" placeholder="https://product-link.com" required><br><br>
-
-<label>Product Description</label><br>
-<textarea placeholder="Describe the item"></textarea><br><br>
-
-<label>Quantity</label><br>
-<input type="number" min="1" value="1"><br><br>
-
-<label>Bank</label><br>
-<select id="bank">
-<option>First National Bank (FNB)</option>
-<option>Absa Bank Botswana</option>
-<option>Standard Chartered</option>
-<option>Bank Gaborone</option>
-<option>Stanbic Bank</option>
-</select><br><br>
-
-<label>Card Number</label><br>
-<input type="text" id="cardNumber" placeholder="Enter 16-digit card number" maxlength="16" required><br><br>
-
-<button type="submit">Submit Order</button>
-<button type="reset">Reset</button>
-</form>
-
+                <button type="submit">Submit Order</button>
+                <button type="reset">Reset</button>
+            </form>
+        </section>
     </main>
 
+    <footer>
+        <p>&copy; 2026 CramLink. All rights reserved.</p>
+    </footer>
+
+    <script>
+    function submitOrder(event){
+        event.preventDefault();
+
+        var email = document.getElementById("email").value;
+        var link = document.getElementById("productLink").value;
+        var card = document.getElementById("cardNumber").value;
+
+        var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        var linkPattern = /^(https?:\/\/)/;
+
+        if(!email.match(emailPattern)){
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        if(!link.match(linkPattern)){
+            alert("Please enter a valid product link starting with http or https.");
+            return;
+        }
+
+        if(card.length < 16){
+            alert("Please enter a valid card number.");
+            return;
+        }
+
+        alert("Order Submitted Successfully!");
+        window.location.href = "status.html";
+    }
+    </script>
 </body>
 </html>
-
