@@ -1,4 +1,6 @@
-/* Reset & Base Styles */
+/* =========================
+   Global Reset & Base Styles
+   ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,253 +8,177 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
   line-height: 1.6;
-  background-image: url('images/background\ .jpeg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #fff9f9;
-  padding: 20px;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-/* Flexible Text */
-h1, h2, h3 {
-  font-size: clamp(1.5rem, 2vw, 3rem); /* scales with screen size */
+/* =========================
+   Header & Navigation
+   ========================= */
+header {
+  background: #0077cc;
+  color: white;
+  padding: 15px;
   text-align: center;
 }
 
-p {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-}
-
-/* Responsive Layout */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-/* Navigation */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+header h1 {
+  margin-bottom: 10px;
 }
 
 nav a {
-  text-decoration: none;
   color: white;
-  background: #0077cc;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
 }
 
 nav a:hover {
-  background: #005fa3;
+  text-decoration: underline;
 }
 
-/* Media Queries for Fine Control */
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
+/* =========================
+   Footer
+   ========================= */
+footer {
+  background: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
 
+/* =========================
+   Main Content
+   ========================= */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   Forms
+   ========================= */
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+form input, form textarea, form select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button, form input[type="submit"], form input[type="reset"] {
+  padding: 12px 20px;
+  margin: 5px;
+  background: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover, form input[type="submit"]:hover, form input[type="reset"]:hover {
+  background-color: #005fa3;
+}
+
+/* =========================
+   Tables (Order History)
+   ========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th {
+  background: #0077cc;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+table tr:hover {
+  background: #eef;
+}
+
+/* =========================
+   Tracking Steps (Order Tracking)
+   ========================= */
+.tracking-steps {
+  margin: 10px 0;
+  padding: 10px;
+  background: #fafafa;
+  border-radius: 6px;
+  font-size: 1.1rem;
+}
+
+.tracking-steps span {
+  margin: 0 5px;
+}
+
+.tracking-steps .done {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 768px) {
   nav {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
-}
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
+  table, thead, tbody, th, td, tr {
+    display: block;
   }
 
-  p {
-    font-size: 1rem;
-  }
-}
-
-section { 
-
-    float: right;
-
-
-    font-size: 14px;
-
-    border: 1px solid #000000;
-
-}
-
-  form { 
-
-  text-align: center;
-
+  table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
   }
 
-  header { 
-
-    font-size: 24px;
-    font-weight: bold; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    element.style {
-        display: block;
-        margin: 0 auto;
-        scrollbar-highlight-color: chocolate;
-    }
-    
-  }
-  sup { 
-
-    font-size: 18px;
-    font-weight: bold; 
-    text-shadow: 2px 2px 4px rgba(4, 4, 4, 0.5);
-    accent-color: red;
-    element.style {
-        display: block;
-        margin: 0 auto;
-        scrollbar-highlight-color: rgb(96, 210, 30);
-    }
+  table td {
+    text-align: left;
+    border: none;
+    padding: 5px;
   }
 
-    sub { 
-    
-        font-size: 16px;
-        font-weight: bold; 
-        text-shadow: 2px 2px 4px rgba(4, 4, 4, 0.5);
-        accent-color: red;
-        element.style {
-            display: block;
-            margin: 0 auto;
-            scrollbar-highlight-color: rgb(48, 210, 30);
-        }
-    }
-     section area { 
+  table th {
+    display: none;
+  }
 
-        background-color: rgba(255, 255, 255, 0.5);
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-        color: #000000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        font-family: serif;
-        font-weight: bold;
-        color: #000;
-        
-    }
-
-    /* Buttons */
-button, .cta {
-  background: #ff6600;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-button:hover, .cta:hover {
-  background: #e65c00;
-}
-
-.href {
-
-  color: #ff6600;
-  text-decoration: none;
-  text-shadow: #000000 1px 1px 2px ;
-
-}
-
-label {
-
-    font-size: 16px;
-    font-weight: bold; 
-    text-shadow: 2px 2px 4px rgba(4, 4, 4, 0.5);
-    accent-color: red;
-    element.style {
-        display: block;
-        margin: 0 auto;
-        scrollbar-highlight-color: rgb(125, 196, 11);
-    }
-}
-
-li {
-
-    font-size: 16px;
-    font-weight: bold; 
-    text-shadow: 2px 2px 4px rgba(4, 4, 4, 0.5);
-    accent-color: red;
-    element.style {
-        display: block;
-        margin: 0 auto;
-        scrollbar-highlight-color: rgb(174, 235, 6);
-    }
-
-}
-ul {
-
-    font-size: 16px;
-    font-weight: bold; 
-    text-shadow: 2px 2px 4px rgba(4, 4, 4, 0.5);
-    accent-color: red;
-    element.style {
-        display: block;
-        margin: 0 auto;
-        scrollbar-highlight-color: rgb(145, 244, 7);
-    }
-
-}
-.profile-widget {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  position: relative;
-}
-
-.avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid #004080;
-}
-
-#profile-details {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 15px;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 250px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.hidden {
-  display: none;
-}
-
-button {
-  background: #004080;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  margin-top: 10px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-button:hover {
-  background: #0066cc;
+  form {
+    width: 100%;
+  }
 }
