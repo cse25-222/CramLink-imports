@@ -1,64 +1,55 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Tracking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Order Tracking</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a> |
+      <a href="logout.html">Logout</a> |
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
 
-<html lang="en"> 
+  <main>
+    <p>Below you can track the progress of your ordered goods and view their current delivery status.</p>
 
-<head> 
+    <section>
+      <h2>Track Shipment – Order #67910</h2>
+      <p><strong>Product:</strong> Portable Bluetooth Speaker</p>
+      <p><strong>Carrier:</strong> DHL | <strong>Tracking Number:</strong> TRK458921</p>
+      <div class="tracking-steps">
+        <span class="done">1. Ordered ✅</span> →
+        <span class="done">2. Shipped ✅</span> →
+        <span>3. In Transit</span> →
+        <span>4. Delivered</span>
+      </div>
+      <p><strong>Estimated Delivery:</strong> 2025-04-12</p>
+    </section>
 
-    <meta charset="UTF-8"> 
+    <hr>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <section>
+      <h2>Track Shipment – Order #67911</h2>
+      <p><strong>Product:</strong> Wireless Gaming Mouse</p>
+      <p><strong>Carrier:</strong> FedEx | <strong>Tracking Number:</strong> TRK458922</p>
+      <div class="tracking-steps">
+        <span class="done">1. Ordered ✅</span> →
+        <span class="done">2. Shipped ✅</span> →
+        <span class="done">3. In Transit ✅</span> →
+        <span>4. Delivered</span>
+      </div>
+      <p><strong>Estimated Delivery:</strong> 2025-04-10</p>
+    </section>
+  </main>
 
-    <title>Order Tracking</title> 
-
-</head> 
-
-<body> 
-
-    <header> 
-
-        <h1>Order Tracking</h1> 
-
-        <nav> 
-             <a href="dashboard.html">Dashboard</a> |
-            <a href="logout.html">Logout</a> | 
-            <a href="index.html">Home</a>
-          <link rel="stylesheet" href="styles.css">
-        </nav>
-
-    </header>
-
-<main> 
-    <p>Below you can track the progress of your odered goods and view their current delivery status</p>
-
-    <h2>Track Shipment – Order #67910</h2>
-
-<p>Product: Portable Bluetooth Speaker</p>
-
-<p>Carrier: DHL | Tracking Number: TRK458921</p>
-
-<!-- Progress Steps -->
-<div>
-  <span>1. Ordered ✅</span> → 
-  <span>2. Shipped ✅</span> → 
-  <span>3. In Transit</span> → 
-  <span>4. Delivered</span>
-</div>
-
-<p>Estimated Delivery: 2025-04-12</p>
-
-<hr>
-
-<h2>Track Shipment – Order #67911</h2>
-<p>Product: Wireless Gaming Mouse</p>
-<p>Carrier: FedEx | Tracking Number: TRK458922</p>
-
-<div>
-  <span>1. Ordered ✅</span> → 
-  <span>2. Shipped ✅</span> → 
-  <span>3. In Transit ✅</span> → 
-  <span>4. Delivered</span>
-</div>
-
-<p>Estimated Delivery: 2025-04-10</p>
-
-</main>
+  <footer>
+    <p>&copy; 2026 CramLink. All rights reserved.</p>
+  </footer>
+</body>
+</html>
