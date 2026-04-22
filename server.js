@@ -9,13 +9,21 @@ const port = 3000;
 
 // ===== MIDDLEWARE =====
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3000', // Allow requests from this origin
+    credentials: true
+}));
 
 app.use(session({
     secret: 'cramlink-secret',
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 1000 * 60 * 60 } // 1 hour
+    cookie: { maxAge: 1000 * 60 * 60, // 1 hour
+    httpOnly: true,
+    secure: false,// requuired for localhost
+    sameSite: 'lax' // fixes Chrome cookie issues
+
+}
 }));
 
 // ===== DATABASE CONNECTION =====
