@@ -132,3 +132,80 @@ table tr:hover {
     width: 100%;
   }
 }
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  position: relative;
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.hero-buttons .btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  background: #0077cc;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.hero-buttons .btn:hover {
+  background: #005fa3;
+}
+.hero-video {
+  margin-top: 20px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Highlights */
+.highlights {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+}
+.highlight {
+  text-align: center;
+  max-width: 250px;
+}
+
+/* Stores */
+.stores {
+  text-align: center;
+  margin: 40px 0;
+}
+.store-logos a {
+  margin: 0 15px;
+  font-weight: bold;
+  color: #0077cc;
+}
+
+/* Testimonials */
+.testimonials {
+  text-align: center;
+  margin: 40px 0;
+}
+.testimonials blockquote {
+  font-style: italic;
+  margin: 10px auto;
+  max-width: 600px;
+}
+
+/* Call to Action */
+.cta {
+  text-align: center;
+  margin: 40px 0;
+}
+.cta .btn {
+  padding: 14px 28px;
+  background: #28a745;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.cta .btn:hover {
+  background: #1e7e34;
+}
