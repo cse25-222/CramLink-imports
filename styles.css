@@ -12,12 +12,7 @@ header, footer {
   color: white;
   padding: 15px;
   text-align: center;
-  .logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    
-  }
+  
 }
 
 /* Navigation links */
