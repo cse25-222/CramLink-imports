@@ -13,11 +13,8 @@ header, footer {
   padding: 15px;
   text-align: center;
   .logo {
-    height: 50px;
-    margin-top: 10px;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    
   }
 }
 
