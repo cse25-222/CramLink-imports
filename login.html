@@ -17,16 +17,17 @@
     </header> 
 
     <main> 
-        <p>Welcome back! Please log in to your account.</p> 
         
-        <section>
+         <section>
             <section class="form-wrapper">
             <form action="/login" method="post">
                <h2>Login</h2>
+                <p>Welcome back! Please log in to your account.</p>
              <form id="loginForm">   
                 <input type="email" id="email" placeholder="Enter email" required><br><br>
                 <input type="password" id="password" placeholder="Enter password" required><br><br>
                 <button type="submit">Login</button>
+               <p>Don't have an account? <a href="register.html">Register here</a>.</p>
             </form>
 
             <p id="message"></p>
@@ -61,9 +62,7 @@
             });
             </script>
 
-            <br> Login to access your dashboard and manage your orders, track shipments, and update your account information.
-
-            <p>Don't have an account? <a href="register.html">Register here</a>.</p>
+          
         </section>
 
         <p>Thank you for visiting!</p> 
