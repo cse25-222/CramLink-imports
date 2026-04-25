@@ -31,7 +31,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'CramLink-imports'
+    database: 'cramlink-imports'
 });
 
 db.connect((err) => {
