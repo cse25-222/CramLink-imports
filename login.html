@@ -20,7 +20,10 @@
         <p>Welcome back! Please log in to your account.</p> 
         
         <section>
-            <form id="loginForm">
+            <section class="form-wrapper">
+            <form action="/login" method="post">
+               <h2>Login</h2>
+             <form id="loginForm">   
                 <input type="email" id="email" placeholder="Enter email" required><br><br>
                 <input type="password" id="password" placeholder="Enter password" required><br><br>
                 <button type="submit">Login</button>

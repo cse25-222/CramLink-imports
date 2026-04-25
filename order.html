@@ -41,7 +41,10 @@
         </section>
 
         <section>
-            <form onsubmit="submitOrder(event)">
+            <section class="form-wrapper">
+             <form action="/order" method="post">
+                <h2>Place Your Order</h2>
+                <form onsubmit="submitOrder(event)">
                 <label>Email (Username)</label><br>
                 <input type="email" id="email" placeholder="example@email.com" required><br><br>
 
