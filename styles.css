@@ -235,16 +235,18 @@ table tr:hover {
 .cta .btn:hover {
   background: #1e7e34;
 }
-/* ===== FORM BASELINE ===== */
+/* ===== FORM CONTAINER ===== */
 form {
-  width: 100%;               /* always full width */
-  max-width: 500px;          /* neat size on desktop */
-  margin: 30px auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.95);
+  max-width: 500px;              /* neat size on desktop */
+  width: 90%;                    /* shrink on mobile */
+  margin: 40px auto;             /* center horizontally */
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.85); /* semi-transparent white card */
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   font-family: 'Open Sans', Arial, sans-serif;
+  position: relative;            /* ensures it floats above background */
+  z-index: 1;
 }
 
 /* Headings inside forms */
@@ -254,10 +256,9 @@ form h2 {
   color: #0077cc;
 }
 
-/* Inputs, selects, textareas */
+/* Inputs */
 form input, form textarea, form select {
-  display: block;
-  width: 100%;               /* stretch full width */
+  width: 100%;
   padding: 14px;
   margin: 12px 0;
   border: 1px solid #ccc;
@@ -270,11 +271,11 @@ form input, form textarea, form select {
 form button,
 form input[type="submit"],
 form input[type="reset"] {
-  display: block;
-  width: 100%;               /* full width on mobile */
-  max-width: 220px;          /* neat size on desktop */
+  width: 100%;
+  max-width: 220px;
   padding: 14px;
   margin: 20px auto;
+  display: block;
   background: #0077cc;
   color: white;
   border: none;
@@ -303,16 +304,11 @@ form p a:hover {
   text-decoration: underline;
 }
 
-/* ===== RESPONSIVE TWEAKS ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   form {
-    padding: 15px;
-    margin: 15px;
-  }
-  form input, form textarea, form select {
-    font-size: 0.95rem;
-  }
-  form button {
-    max-width: 100%;   /* buttons stretch fully on mobile */
+    width: 95%;       /* shrink more on small screens */
+    padding: 20px;
+    margin: 20px auto;
   }
 }
