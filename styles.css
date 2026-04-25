@@ -235,15 +235,15 @@ table tr:hover {
 .cta .btn:hover {
   background: #1e7e34;
 }
-/* ===== FORM RESET & BASE ===== */
+/* ===== FORM BASELINE ===== */
 form {
-  max-width: 600px;          /* neat width on desktop */
-  width: 100%;               /* full width on mobile */
+  width: 100%;               /* always full width */
+  max-width: 500px;          /* neat size on desktop */
   margin: 30px auto;
-  padding: 25px;
-  background: rgba(255, 255, 255, 0.9); /* blends with background */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   font-family: 'Open Sans', Arial, sans-serif;
 }
 
@@ -256,7 +256,8 @@ form h2 {
 
 /* Inputs, selects, textareas */
 form input, form textarea, form select {
-  width: 100%;
+  display: block;
+  width: 100%;               /* stretch full width */
   padding: 14px;
   margin: 12px 0;
   border: 1px solid #ccc;
@@ -269,11 +270,11 @@ form input, form textarea, form select {
 form button,
 form input[type="submit"],
 form input[type="reset"] {
+  display: block;
   width: 100%;               /* full width on mobile */
-  max-width: 250px;          /* neat size on desktop */
+  max-width: 220px;          /* neat size on desktop */
   padding: 14px;
   margin: 20px auto;
-  display: block;
   background: #0077cc;
   color: white;
   border: none;
@@ -288,7 +289,7 @@ form input[type="reset"]:hover {
   background-color: #005fa3;
 }
 
-/* Links under forms (e.g., "Already have an account?") */
+/* Links under forms */
 form p {
   text-align: center;
   margin-top: 15px;
@@ -305,7 +306,7 @@ form p a:hover {
 /* ===== RESPONSIVE TWEAKS ===== */
 @media (max-width: 768px) {
   form {
-    padding: 20px;
+    padding: 15px;
     margin: 15px;
   }
   form input, form textarea, form select {
