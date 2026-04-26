@@ -52,7 +52,8 @@ app.get('/', (req, res) => {
 
 // ===== REGISTER =====
 app.post('/register', (req, res) => {
-    const { email, password } = req.body;
+    const email = req.body?.email;
+    const password = req.body?.password;
 
     if (!email || !password) {
         return res.send("Please fill all fields");
@@ -72,7 +73,8 @@ app.post('/register', (req, res) => {
 
 // ===== LOGIN =====
 app.post('/login', (req, res) => {
-    const { email, password } = req.body;
+    const email = req.body?.email;
+    const password = req.body?.password;
 
     console.log("LOGIN INPUT:", email, password);
 

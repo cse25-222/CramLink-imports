@@ -46,6 +46,7 @@
                     });
 
                     const result = await response.text();
+                    document.getElementById("message").innerText = result;
                     alert(result);
 
                     // optional redirect
