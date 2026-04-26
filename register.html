@@ -21,42 +21,48 @@
 
         <section>
             <section class="form-wrapper">
-           <form action="/register" method="post">
-            <h2>Create Your Account</h2>
-            <form id="registerForm">
-                <input type="email" id="email" placeholder="Enter email" required>
-                <input type="password" id="password" placeholder="Enter password" required>
-                <button type="submit">Register</button>
-            </form>
 
-            <script>
-            document.getElementById("registerForm").addEventListener("submit", async (e) => {
-                e.preventDefault();
+    <h2>Create Your Account</h2>
 
-                const email = document.getElementById("email").value.trim();
-                const password = document.getElementById("password").value.trim();
+    <form id="registerForm">
+        <input type="email" id="email" placeholder="Enter email" required><br><br>
+        <input type="password" id="password" placeholder="Enter password" required><br><br>
+        <button type="submit">Register</button>
+    </form>
 
-                try {
-                    const response = await fetch("http://localhost:3000/register", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({ email, password })
-                    });
+    <p id="message"></p>
 
-                    const result = await response.text();
-                    document.getElementById("message").innerText = result;
-                    alert(result);
+</section>
 
-                    // optional redirect
-                    window.location.href = "login.html";
+<script>
+document.getElementById("registerForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-                } catch (error) {
-                    alert("Error connecting to server");
-                }
-            });
-            </script>
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    try {
+        const response = await fetch("http://localhost:3000/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const result = await response.text();
+        document.getElementById("message").innerText = result;
+
+        if (result.includes("success")) {
+            window.location.href = "login.html";
+        }
+
+    } catch (error) {
+        console.error(error);
+        document.getElementById("message").innerText = "Error connecting to server";
+    }
+});
+</script>
         </section>
 
         <p>Already have an account? <a href="login.html">Login here</a>.</p>
