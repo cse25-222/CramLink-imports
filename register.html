@@ -22,54 +22,56 @@
         <section>
             <section class="form-wrapper">
 
-    <h2>Create Your Account</h2>
+   
 
-    <form id="registerForm">
-        <input type="email" id="email" placeholder="Enter email" required><br><br>
-        <input type="password" id="password" placeholder="Enter password" required><br><br>
-        <button type="submit">Register</button>
-    </form>
+          <form id="registerForm">
+          <h2>Create Your Account</h2>
+          <input type="email" id="email" placeholder="Enter email" required><br><br>
+          <input type="password" id="password" placeholder="Enter password" required><br><br>
+          <button type="submit">Register</button>
+          </form>
 
-    <p id="message"></p>
+         <p id="message"></p>
 
-</section>
+         </section>
 
-<script>
-document.getElementById("registerForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
+         <script>
+          document.getElementById("registerForm").addEventListener("submit", async (e) => {
+         e.preventDefault();
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+         const email = document.getElementById("email").value.trim();
+         const password = document.getElementById("password").value.trim();
 
-    try {
-        const response = await fetch("http://localhost:3000/register", {
-            method: "POST",
-            headers: {
+           try {
+             const response = await fetch("http://localhost:3000/register", {
+              method: "POST",
+              headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email, password })
-        });
+             },
+              body: JSON.stringify({ email, password })
+             });
 
-        const result = await response.text();
-        document.getElementById("message").innerText = result;
+             const result = await response.text();
+              document.getElementById("message").innerText = result;
 
-        if (result.includes("success")) {
-            window.location.href = "login.html";
-        }
+             if (result.includes("success")) {
+               window.location.href = "login.html";
+              }
 
-    } catch (error) {
-        console.error(error);
-        document.getElementById("message").innerText = "Error connecting to server";
-    }
-});
-</script>
-        </section>
+              } catch (error) {
+              console.error(error);
+             document.getElementById("message").innerText = "Error connecting to server";
+              }
+               });
+              </script>
+              </section>
+             
 
-        <p>Already have an account? <a href="login.html">Login here</a>.</p>
-    </main> 
+              <p>Already have an account? <a href="login.html">Login here</a>.</p>
+              </main> 
 
-    <footer> 
-        <p>&copy; 2026 CramLink. All rights reserved.</p> 
-    </footer> 
-</body> 
-</html>
+                <footer> 
+              <p>&copy; 2026 CramLink. All rights reserved.</p> 
+             </footer> 
+               </body> 
+              </html>
