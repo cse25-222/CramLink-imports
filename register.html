@@ -39,6 +39,35 @@
          <script>
           
               </script>
+              <script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
+
+  const savedUser = JSON.parse(localStorage.getItem("user"));
+
+  if (!savedUser) {
+    document.getElementById("message").innerText = "No account found";
+    return;
+  }
+
+  if (
+    email === savedUser.email &&
+    password === savedUser.password
+  ) {
+    document.getElementById("message").innerText = "Login successful";
+
+    setTimeout(() => {
+      window.location.href = "dashboard.html";
+    }, 1000);
+
+  } else {
+    document.getElementById("message").innerText = "Invalid email or password";
+  }
+});
+</script>
               </section>
               
             </main>
