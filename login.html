@@ -31,49 +31,39 @@
     </form>
 
     <p id="message"></p>
-
-    
 </section>
+                <script>  
+                document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-<script>
-document.getElementById("loginForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+  const savedUser = JSON.parse(localStorage.getItem("user"));
 
-    try {
-        const response = await fetch("http://localhost:3000/login", {
-            method: "POST",
-            credentials: "include",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email, password })
-        });
+  if (!savedUser) {
+    document.getElementById("message").innerText = "No account found";
+    return;
+  }
 
-        const result = await response.text();
-        document.getElementById("message").innerText = result;
+  if (
+    email === savedUser.email &&
+    password === savedUser.password
+  ) {
+    document.getElementById("message").innerText = "Login successful";
 
-        if (result === "Login successful") {
-            window.location.href = "http://localhost:3000/dashboard";
-        }
+    setTimeout(() => {
+      window.location.href = "dashboard.html";
+    }, 1000);
 
-    } catch (error) {
-        console.error("Error:", error);
-        document.getElementById("message").innerText = "Error connecting to server";
-    }
-});
-       </script>
-
-          
-        </section>
-
-        <p>Thank you for visiting!</p> 
-    </main> 
-
-    <footer> 
-        <p>&copy; 2026 CramLink. All rights reserved.</p> 
-    </footer> 
+  } else {
+    document.getElementById("message").innerText = "Invalid email or password";
+  }
+});  
+</script>
+        </main>
+            <footer> 
+              <p>&copy; 2026 CramLink. All rights reserved.</p> 
+             </footer>
 </body> 
 </html>
