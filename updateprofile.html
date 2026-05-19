@@ -24,32 +24,32 @@
     <section>
       <section class="form-wrapper">
       <form action="/updateprofile" method="post">
-      <form id="updateForm" action="/update-profile" method="post">
+      <form id="updateForm"  action="/update-profile" method="post">
         <label for="fullname">Full Name:</label><br>
-        <input type="text" id="fullname" name="fullname" placeholder="Your full name" required><br><br>
+        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Your full name" required><br><br>
 
         <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" placeholder="Your username" required><br><br>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Your username" required><br><br>
 
         <label for="email">Email Address:</label><br>
-        <input type="email" id="email" name="email" placeholder="example@domain.com" required><br><br>
+        <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" required><br><br>
 
         <label for="phone">Phone Number:</label><br>
-        <input type="tel" id="phone" name="phone" placeholder="+267 7XXXXXXX"><br><br>
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="+267 7XXXXXXX"><br><br>
 
         <label for="password">New Password:</label><br>
-        <input type="password" id="password" name="password" placeholder="Enter new password"><br><br>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter new password"><br><br>
 
         <label for="confirm_password">Confirm New Password:</label><br>
-        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm new password"><br><br>
+        <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm new password"><br><br>
 
         <label for="address">Address:</label><br>
-        <input type="text" id="address" name="address" placeholder="Street, City, Country"><br><br>
+        <input type="text" class="form-control" id="address" name="address" placeholder="Street, City, Country"><br><br>
 
         <label for="bio">Bio (optional):</label><br>
-        <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Tell us something about yourself..."></textarea><br><br>
+        <textarea class="form-control" id="bio" name="bio" rows="4" cols="50" placeholder="Tell us something about yourself..."></textarea><br><br>
 
-        <button type="submit">Update Profile</button>
+        <button type="submit" class="btn btn-primary">Update Profile</button>
       </form>
     </section>
   </main>

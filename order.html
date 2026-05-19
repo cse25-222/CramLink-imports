@@ -47,19 +47,19 @@
                 <h2>Place Your Order</h2>
                 <form onsubmit="submitOrder(event)">
                 <label>Email (Username)</label><br>
-                <input type="email" id="email" placeholder="example@email.com" required><br><br>
+                <input type="email" class="form-control" id="email" placeholder="example@email.com" required><br><br>
 
                 <label>Product Link</label><br>
-                <input type="url" id="productLink" placeholder="https://product-link.com" required><br><br>
+                <input type="url" class="form-control" id="productLink" placeholder="https://product-link.com" required><br><br>
 
                 <label>Product Description</label><br>
-                <textarea placeholder="Describe the item"></textarea><br><br>
+                <textarea class="form-control" placeholder="Describe the item"></textarea><br><br>
 
                 <label>Quantity</label><br>
-                <input type="number" min="1" value="1"><br><br>
+                <input type="number" class="form-control" min="1" value="1"><br><br>
 
                 <label>Bank</label><br>
-                <select id="bank">
+                <select class="form-control" id="bank">
                     <option>First National Bank (FNB)</option>
                     <option>Absa Bank Botswana</option>
                     <option>Standard Chartered</option>
@@ -68,10 +68,10 @@
                 </select><br><br>
 
                 <label>Card Number</label><br>
-                <input type="text" id="cardNumber" placeholder="Enter 16-digit card number" maxlength="16" required><br><br>
+                <input type="text" class="form-control" id="cardNumber" placeholder="Enter 16-digit card number" maxlength="16" required><br><br>
 
-                <button type="submit">Submit Order</button>
-                <button type="reset">Reset</button>
+                <button type="submit" class="btn btn-primary">Submit Order</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
             </form>
         </section>
     </main>
