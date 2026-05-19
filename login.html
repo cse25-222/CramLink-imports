@@ -32,24 +32,31 @@
 
     <p id="message"></p>
 </section>
-                <script>  
-            
+               <script>
 document.getElementById("loginForm").addEventListener("submit", function(e) {
-  e.preventDefault();
 
-  const email = document.getElementById("loginEmail").value.trim();
-  const password = document.getElementById("loginPassword").value.trim();
+    e.preventDefault();
 
-  if (email === "" || password === "") {
-    document.getElementById("message").innerText = "Fill all fields";
-    return;
-  }
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-  document.getElementById("message").innerText = "Login successful";
+    // simple validation
+    if(email === "" || password === "") {
+        document.getElementById("message").innerText = "Please fill all fields";
+        return;
+    }
 
-  setTimeout(() => {
-    window.location.href = "dashboard.html";
-  }, 1000);
+    // login success
+    document.getElementById("message").innerText = "Login successful! Redirecting...";
+
+    // simulate logged in user
+    localStorage.setItem("loggedIn", "true");
+
+    // redirect to dashboard
+    setTimeout(() => {
+        window.location.href = "dashboard.html";
+    }, 1500);
+
 });
 </script>
         </main>
