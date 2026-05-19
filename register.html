@@ -14,7 +14,7 @@
             <a href="index.html">Home</a> | 
             <a href="login.html">Login</a> 
         </nav> 
-    </header> 
+     </header> 
 
     <main> 
         <p>Join us today! Fill out the form below to create an account.</p> 
@@ -35,9 +35,32 @@
          <p id="message"></p>
 
          </section>
-              <script>
+         <script>
+           document.getElementById("registerForm").addEventListener("submit", function(e) {
 
-</script>
+            e.preventDefault();
+
+           const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+           // simple validation
+           if(email === "" || password === "") {
+             document.getElementById("message").innerText = "Please fill all fields";
+            return;
+          }
+
+           // success message
+            document.getElementById("message").innerText = "Registration successful! Redirecting to login...";
+
+          // redirect after 2 seconds
+           setTimeout(() => {
+            window.location.href = "login.html";
+            }, 2000);
+
+         });
+           </script>
+            
+
               
               
             </main>
